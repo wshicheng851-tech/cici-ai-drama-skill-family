@@ -1,0 +1,10 @@
+interface:
+  display_name: "Cici AI 短剧分镜"
+  short_description: "把锁定剧本与资产编译为逐镜表、提示词、连续性和声音剪辑。"
+  default_prompt: "请检查P0资产是否锁定，再把剧本编译成时长闭合的逐镜表和三层AI提示词。"
+compatibility:
+  canonical_format: "Agent Skills SKILL.md"
+  adapter_targets: [openai, claude, generic, agent-skills-compatible]
+  activation: {language: "zh-CN", mechanism: "frontmatter description"}
+  execution: {requires_network: false, requires_external_tools: false}
+gates: {trigger_eval: required, output_review: required, publication: not-requested}

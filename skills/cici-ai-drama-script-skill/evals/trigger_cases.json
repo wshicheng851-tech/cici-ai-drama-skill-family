@@ -1,0 +1,15 @@
+{
+  "positive_concepts":{"script":["AI 短剧剧本","分场剧本","节拍表","选题"],"douyin":["抖音","前三秒","钩子","情绪曲线"],"quality":["逻辑可信度","事件密度","血肉质检","剧本医生"],"boundaries":["不用于","不保证"]},
+  "description_required_concepts":["script","douyin","quality","boundaries"],
+  "recommended_threshold":0.5,
+  "negative_patterns":["视觉母版","逐镜提示词","真人拍摄"],
+  "should_trigger":[
+    {"family":"create","text":"给我三个抖音AI悬疑短剧方案，第一秒有钩子，选完再写200秒节拍和分场剧本。"},
+    {"family":"doctor","text":"检查这份抖音 AI 短剧剧本的逻辑可信度和事件密度，并给最小修改方案。"}
+  ],
+  "should_not_trigger":[
+    {"family":"style","text":"只为已定剧本设计视觉风格DNA和色彩光线。"},
+    {"family":"live","text":"安排真人演员的现场机位和收音。"}
+  ],
+  "near_neighbor":[{"family":"ordinary-writing","text":"写一篇纯文学校园短篇，不考虑短视频和AI生成。"}]
+}

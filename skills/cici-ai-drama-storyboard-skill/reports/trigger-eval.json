@@ -1,0 +1,83 @@
+{
+  "ok": true,
+  "threshold": 0.5,
+  "description_concepts": [
+    "boundaries",
+    "continuity",
+    "prompt",
+    "shot"
+  ],
+  "missing_description_concepts": [],
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "false_positive": 0,
+    "false_negative": 0,
+    "pass_rate": 1.0
+  },
+  "failures": [],
+  "results": {
+    "should_trigger": [
+      {
+        "prompt": "剧本和资产已锁定，请输出逐镜分镜、镜头表和三层提示词。",
+        "family": "compile",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.5,
+        "matched_concepts": [
+          "prompt",
+          "shot"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "检查镜头表里的角色连续性、声音桥和剪辑节奏。",
+        "family": "continuity",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.5,
+        "matched_concepts": [
+          "continuity",
+          "shot"
+        ],
+        "negative_pattern": null
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "prompt": "故事还没选，先给我三个校园短剧方案。",
+        "family": "script",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "先设计女主角色母版和多角度测试图。",
+        "family": "asset",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": "角色母版"
+      }
+    ],
+    "near_neighbor": [
+      {
+        "prompt": "直接替我登录生成平台批量生成并发布。",
+        "family": "direct-operation",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": null
+      }
+    ]
+  }
+}

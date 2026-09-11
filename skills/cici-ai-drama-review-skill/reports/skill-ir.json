@@ -1,0 +1,96 @@
+{
+  "schema_version": "2.0.0-qiaomu-lite",
+  "generated_at": "2026-09-11",
+  "package": {
+    "name": "cici-ai-drama-review-skill",
+    "version": "2.0.0",
+    "owner": "Cici",
+    "maturity_tier": "production",
+    "lifecycle_stage": null,
+    "upstream_inspiration": null,
+    "upstream_sync": {}
+  },
+  "intent": {
+    "description": "为抖音 AI 短剧执行生成前、试拍、批量门和成片终检：验证剧本兑现、资产一致性、动作交互、节奏声音、字幕版权与平台风险，诊断漂移根因并用单变量回归。 当用户要求试拍验收、检查 AI 角色/场景/道具漂移、评估能否批量生成、审核成片或形成问题清单和修订优先级时使用。 不用于从零创作剧本和资产、不直接操作生成或发布平台，也不承诺播放量与商业效果。",
+    "job_to_be_done": "Validate Douyin AI drama assets, trial shots and final edits before batch or delivery.",
+    "target_users": [
+      "Qiaomu operator"
+    ],
+    "inputs": [
+      "locked baselines and actual outputs"
+    ],
+    "outputs": [
+      "evidence-based review, root cause and retest plan"
+    ],
+    "exclusions": [
+      "new story creation",
+      "direct generation or publishing",
+      "performance guarantee"
+    ],
+    "qiaomu_defaults": {}
+  },
+  "triggers": {
+    "should_trigger": [
+      "审核AI短剧试拍镜头，判断角色和场景是否能进入批量生成。",
+      "给成片做连续性、声音、字幕、版权和平台风险终检。"
+    ],
+    "should_not_trigger": [
+      "从零写一个都市情感AI短剧。",
+      "提出三种视觉风格路线。"
+    ],
+    "near_neighbor": [
+      "保证这个成片发布后播放量破百万。"
+    ]
+  },
+  "workflow": {
+    "router_rules": [],
+    "compact_workflow": [],
+    "gate_ladder": [],
+    "output_contract": []
+  },
+  "resources": {
+    "references": [
+      "references\\review-checklist.md"
+    ],
+    "scripts": [],
+    "evals": [
+      "evals\\trigger_cases.json"
+    ],
+    "reports": [
+      "reports\\creation-handoff.md",
+      "reports\\prior-art-research.md",
+      "reports\\trigger-eval.json"
+    ]
+  },
+  "portability": {
+    "canonical_format": "Agent Skills SKILL.md",
+    "adapter_targets": [
+      "openai",
+      "claude",
+      "generic",
+      "agent-skills-compatible"
+    ],
+    "activation": {
+      "language": "zh-CN",
+      "mechanism": "frontmatter description"
+    },
+    "execution": {
+      "requires_network": false,
+      "requires_external_tools": false
+    },
+    "trust": {},
+    "permissions": {},
+    "degradation": {}
+  },
+  "gates": {
+    "trigger_eval": "required",
+    "output_review": "required",
+    "publication": "not-requested"
+  },
+  "evidence_boundary": {
+    "generated_reports_are_evidence": true,
+    "planned_work_is_evidence": false,
+    "missing_external_or_human_evidence_label": "missing evidence",
+    "public_claim_policy": "claim only what local validation, install proof, human review, or provider-backed evidence actually supports"
+  }
+}

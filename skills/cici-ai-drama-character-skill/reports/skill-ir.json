@@ -1,0 +1,95 @@
+{
+  "schema_version": "2.0.0-qiaomu-lite",
+  "generated_at": "2026-09-11",
+  "package": {
+    "name": "cici-ai-drama-character-skill",
+    "version": "2.0.0",
+    "owner": "Cici",
+    "maturity_tier": "production",
+    "lifecycle_stage": null,
+    "upstream_inspiration": null,
+    "upstream_sync": {}
+  },
+  "intent": {
+    "description": "为抖音 AI 短剧把剧本人物转成可重复生成的角色母版：设计身份、面部、体态、服装配饰、表演锚点、固定/可变/禁改项与多角度测试，并维护服装情绪和伤痕状态连续性。 当用户要求角色设定、人物参考图方案、保持同一角色不变脸、设计非人角色结构或建立系列角色库时使用。 不用于编写完整剧本、场景/道具母版、逐镜剪辑或未经授权的真人肖像复刻。",
+    "job_to_be_done": "Design stable character master assets for Douyin AI drama.",
+    "target_users": [
+      "Qiaomu operator"
+    ],
+    "inputs": [
+      "locked script, Style ID"
+    ],
+    "outputs": [
+      "character bible, states, consistency tests"
+    ],
+    "exclusions": [
+      "full screenplay",
+      "scene or prop design",
+      "unauthorized likeness"
+    ],
+    "qiaomu_defaults": {}
+  },
+  "triggers": {
+    "should_trigger": [
+      "给AI短剧女主做角色母版、三套动作测试和服装状态连续性。",
+      "同一AI角色总变脸，检查面部锚点和禁改项。"
+    ],
+    "should_not_trigger": [
+      "设计便利店可导航空间和夜雨变体。",
+      "给我三个故事方案。"
+    ],
+    "near_neighbor": [
+      "一比一复刻某位真实明星做主角。"
+    ]
+  },
+  "workflow": {
+    "router_rules": [],
+    "compact_workflow": [],
+    "gate_ladder": [],
+    "output_contract": []
+  },
+  "resources": {
+    "references": [
+      "references\\character-bible.md"
+    ],
+    "scripts": [],
+    "evals": [
+      "evals\\trigger_cases.json"
+    ],
+    "reports": [
+      "reports\\creation-handoff.md",
+      "reports\\prior-art-research.md"
+    ]
+  },
+  "portability": {
+    "canonical_format": "Agent Skills SKILL.md",
+    "adapter_targets": [
+      "openai",
+      "claude",
+      "generic",
+      "agent-skills-compatible"
+    ],
+    "activation": {
+      "language": "zh-CN",
+      "mechanism": "frontmatter description"
+    },
+    "execution": {
+      "requires_network": false,
+      "requires_external_tools": false
+    },
+    "trust": {},
+    "permissions": {},
+    "degradation": {}
+  },
+  "gates": {
+    "trigger_eval": "required",
+    "output_review": "required",
+    "publication": "not-requested"
+  },
+  "evidence_boundary": {
+    "generated_reports_are_evidence": true,
+    "planned_work_is_evidence": false,
+    "missing_external_or_human_evidence_label": "missing evidence",
+    "public_claim_policy": "claim only what local validation, install proof, human review, or provider-backed evidence actually supports"
+  }
+}

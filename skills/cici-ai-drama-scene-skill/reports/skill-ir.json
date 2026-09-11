@@ -1,0 +1,95 @@
+{
+  "schema_version": "2.0.0-qiaomu-lite",
+  "generated_at": "2026-09-11",
+  "package": {
+    "name": "cici-ai-drama-scene-skill",
+    "version": "2.0.0",
+    "owner": "Cici",
+    "maturity_tier": "production",
+    "lifecycle_stage": null,
+    "upstream_inspiration": null,
+    "upstream_sync": {}
+  },
+  "intent": {
+    "description": "为抖音 AI 短剧建立可拍、可导航、可复现的场景母版与时间天气变体：定义入口出口、行动路线、前中后景、反打方向、材质陈设、光源与连续性锚点。 当用户要求设计 AI 短剧场景、空间参考图、同一地点多时段版本、解决空间关系或天气材质漂移时使用。 不用于写剧本、人物/道具母版、逐镜剪辑，或把一句氛围词当成完整空间设计。",
+    "job_to_be_done": "Design navigable and consistent scene master assets for Douyin AI drama.",
+    "target_users": [
+      "Qiaomu operator"
+    ],
+    "inputs": [
+      "locked script, Style ID"
+    ],
+    "outputs": [
+      "scene bible, spatial anchors, variants, tests"
+    ],
+    "exclusions": [
+      "screenplay",
+      "character or prop design",
+      "shot editing"
+    ],
+    "qiaomu_defaults": {}
+  },
+  "triggers": {
+    "should_trigger": [
+      "为便利店AI短剧建立店内场景母版、出入口动线和夜雨停电变体。",
+      "生成镜头的门窗货架总换位，帮我校正场景空间锚点。"
+    ],
+    "should_not_trigger": [
+      "设计女主的脸型发型和服装母版。",
+      "检查故事反转的因果。"
+    ],
+    "near_neighbor": [
+      "把已锁场景做成逐镜提示词和剪辑计划。"
+    ]
+  },
+  "workflow": {
+    "router_rules": [],
+    "compact_workflow": [],
+    "gate_ladder": [],
+    "output_contract": []
+  },
+  "resources": {
+    "references": [
+      "references\\scene-bible.md"
+    ],
+    "scripts": [],
+    "evals": [
+      "evals\\trigger_cases.json"
+    ],
+    "reports": [
+      "reports\\creation-handoff.md",
+      "reports\\prior-art-research.md"
+    ]
+  },
+  "portability": {
+    "canonical_format": "Agent Skills SKILL.md",
+    "adapter_targets": [
+      "openai",
+      "claude",
+      "generic",
+      "agent-skills-compatible"
+    ],
+    "activation": {
+      "language": "zh-CN",
+      "mechanism": "frontmatter description"
+    },
+    "execution": {
+      "requires_network": false,
+      "requires_external_tools": false
+    },
+    "trust": {},
+    "permissions": {},
+    "degradation": {}
+  },
+  "gates": {
+    "trigger_eval": "required",
+    "output_review": "required",
+    "publication": "not-requested"
+  },
+  "evidence_boundary": {
+    "generated_reports_are_evidence": true,
+    "planned_work_is_evidence": false,
+    "missing_external_or_human_evidence_label": "missing evidence",
+    "public_claim_policy": "claim only what local validation, install proof, human review, or provider-backed evidence actually supports"
+  }
+}

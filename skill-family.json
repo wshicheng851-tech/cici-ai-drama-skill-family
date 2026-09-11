@@ -1,0 +1,16 @@
+{
+  "name": "cici-ai-drama-skill-family",
+  "version": "2.0.0",
+  "owner": "wshicheng851-tech",
+  "license": "MIT",
+  "skills": [
+    "skills/cici-ai-drama-director-skill",
+    "skills/cici-ai-drama-script-skill",
+    "skills/cici-ai-drama-style-skill",
+    "skills/cici-ai-drama-character-skill",
+    "skills/cici-ai-drama-scene-skill",
+    "skills/cici-ai-drama-prop-skill",
+    "skills/cici-ai-drama-storyboard-skill",
+    "skills/cici-ai-drama-review-skill"
+  ]
+}

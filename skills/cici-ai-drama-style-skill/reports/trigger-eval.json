@@ -1,0 +1,85 @@
+{
+  "ok": true,
+  "threshold": 0.5,
+  "description_concepts": [
+    "ai",
+    "boundaries",
+    "style",
+    "task"
+  ],
+  "missing_description_concepts": [],
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "false_positive": 0,
+    "false_negative": 0,
+    "pass_rate": 1.0
+  },
+  "failures": [],
+  "results": {
+    "should_trigger": [
+      {
+        "prompt": "为这部 AI 短剧提出三种差异明显的视觉风格并锁定 Style DNA。",
+        "family": "options",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.75,
+        "matched_concepts": [
+          "ai",
+          "style",
+          "task"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "这部 AI 短剧出现视觉风格漂移，请用 Style DNA 帮我诊断。",
+        "family": "drift",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.75,
+        "matched_concepts": [
+          "ai",
+          "style",
+          "task"
+        ],
+        "negative_pattern": null
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "prompt": "写一个200秒悬疑AI短剧剧本。",
+        "family": "script",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "设计主角手里的旧收音机道具母版。",
+        "family": "prop",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": "道具母版"
+      }
+    ],
+    "near_neighbor": [
+      {
+        "prompt": "完整复刻一位在世导演的个人风格。",
+        "family": "living-style",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+interface:
+  display_name: "Cici AI 短剧视觉风格"
+  short_description: "把审美意图锁成可复现的 Style DNA。"
+  default_prompt: "请为已锁定的抖音 AI 短剧给三条明显不同的视觉路线，推荐一案并生成 Style DNA。"
+compatibility:
+  canonical_format: "Agent Skills SKILL.md"
+  adapter_targets: [openai, claude, generic, agent-skills-compatible]
+  activation: {language: "zh-CN", mechanism: "frontmatter description"}
+  execution: {requires_network: false, requires_external_tools: false}
+gates: {trigger_eval: required, output_review: required, publication: not-requested}

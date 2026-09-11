@@ -1,0 +1,10 @@
+interface:
+  display_name: "Cici AI 短剧场景"
+  short_description: "设计可导航场景母版、空间锚点与时段天气变体。"
+  default_prompt: "请基于剧本和Style ID建立场景母版，明确动线、反打、固定项、变量和标准测试。"
+compatibility:
+  canonical_format: "Agent Skills SKILL.md"
+  adapter_targets: [openai, claude, generic, agent-skills-compatible]
+  activation: {language: "zh-CN", mechanism: "frontmatter description"}
+  execution: {requires_network: false, requires_external_tools: false}
+gates: {trigger_eval: required, output_review: required, publication: not-requested}

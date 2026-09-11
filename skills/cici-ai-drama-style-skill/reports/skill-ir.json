@@ -1,0 +1,95 @@
+{
+  "schema_version": "2.0.0-qiaomu-lite",
+  "generated_at": "2026-09-11",
+  "package": {
+    "name": "cici-ai-drama-style-skill",
+    "version": "2.0.0",
+    "owner": "Cici",
+    "maturity_tier": "production",
+    "lifecycle_stage": null,
+    "upstream_inspiration": null,
+    "upstream_sync": {}
+  },
+  "intent": {
+    "description": "为抖音 AI 短剧识别、提出并锁定可复现的视觉风格：把模糊审美翻译为 Style DNA，明确画面类型、材质形态、类型语言、色彩、光线、镜头与质感，并输出固定项、变量和禁改项。 当用户要求确定 AI 短剧画面风格、比较三种视觉路线、制作视觉圣经或解决跨镜头风格漂移时使用。 不用于写剧本、设计具体角色场景道具、逐镜提示词、模仿在世创作者或未经授权的作品风格。",
+    "job_to_be_done": "Define and lock a reproducible visual style for a Douyin AI drama.",
+    "target_users": [
+      "Qiaomu operator"
+    ],
+    "inputs": [
+      "locked story and visual intent"
+    ],
+    "outputs": [
+      "Style DNA, invariants, variables, tests"
+    ],
+    "exclusions": [
+      "script writing",
+      "asset content",
+      "living-creator imitation"
+    ],
+    "qiaomu_defaults": {}
+  },
+  "triggers": {
+    "should_trigger": [
+      "为这部AI短剧提出三种差异明显的视觉风格并锁定Style DNA。",
+      "同一短剧不同镜头的色彩和材质总漂，帮我诊断风格母版。"
+    ],
+    "should_not_trigger": [
+      "写一个200秒悬疑AI短剧剧本。",
+      "设计主角手里的旧收音机道具母版。"
+    ],
+    "near_neighbor": [
+      "完整复刻一位在世导演的个人风格。"
+    ]
+  },
+  "workflow": {
+    "router_rules": [],
+    "compact_workflow": [],
+    "gate_ladder": [],
+    "output_contract": []
+  },
+  "resources": {
+    "references": [
+      "references\\style-dna.md"
+    ],
+    "scripts": [],
+    "evals": [
+      "evals\\trigger_cases.json"
+    ],
+    "reports": [
+      "reports\\creation-handoff.md",
+      "reports\\prior-art-research.md"
+    ]
+  },
+  "portability": {
+    "canonical_format": "Agent Skills SKILL.md",
+    "adapter_targets": [
+      "openai",
+      "claude",
+      "generic",
+      "agent-skills-compatible"
+    ],
+    "activation": {
+      "language": "zh-CN",
+      "mechanism": "frontmatter description"
+    },
+    "execution": {
+      "requires_network": false,
+      "requires_external_tools": false
+    },
+    "trust": {},
+    "permissions": {},
+    "degradation": {}
+  },
+  "gates": {
+    "trigger_eval": "required",
+    "output_review": "required",
+    "publication": "not-requested"
+  },
+  "evidence_boundary": {
+    "generated_reports_are_evidence": true,
+    "planned_work_is_evidence": false,
+    "missing_external_or_human_evidence_label": "missing evidence",
+    "public_claim_policy": "claim only what local validation, install proof, human review, or provider-backed evidence actually supports"
+  }
+}

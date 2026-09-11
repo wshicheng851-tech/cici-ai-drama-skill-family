@@ -1,0 +1,20 @@
+interface:
+  display_name: "Cici AI 短剧总控"
+  short_description: "统筹抖音 AI 短剧的剧本、资产、分镜提示词与验收。"
+  default_prompt: "请把我当作投资人/甲方，按抖音 AI 短剧流程统筹项目；先给三个差异明确的故事方案，获批后再调用对应子 Skill 深化。"
+compatibility:
+  canonical_format: "Agent Skills SKILL.md"
+  adapter_targets: [openai, claude, generic, agent-skills-compatible]
+  activation:
+    language: "zh-CN"
+    mechanism: "frontmatter description"
+  execution:
+    requires_network: false
+    requires_external_tools: false
+  permissions:
+    filesystem: "read-only for project inputs unless user authorizes outputs"
+    network: "none required"
+gates:
+  trigger_eval: required
+  output_review: required
+  publication: not-requested

@@ -1,0 +1,108 @@
+{
+  "schema_version": "2.0.0-qiaomu-lite",
+  "generated_at": "2026-09-11",
+  "package": {
+    "name": "cici-ai-drama-director-skill",
+    "version": "2.0.0",
+    "owner": "Cici",
+    "maturity_tier": "production",
+    "lifecycle_stage": "major-upgrade",
+    "upstream_inspiration": null,
+    "upstream_sync": {}
+  },
+  "intent": {
+    "description": "为抖音优先的 AI 短剧、AI 剧情短片提供总控编导工作流：把投资人/甲方需求拆成剧本、视觉风格、角色、场景、道具、分镜提示词与试拍验收，并维护资产台账、审批门和版本连续性。 当用户要求从想法到成片统筹 AI 短剧、选择故事方案、协调多项资产、做完整生产计划或检查项目整体一致性时使用。 不用于真人口播/Vlog/现场拍摄、普通舞台或文学写作、直接代操作生成平台、仿冒在世创作者风格、未经授权的真人/IP，或承诺爆款与商业回报。",
+    "job_to_be_done": "Orchestrate a Douyin-priority AI short-drama project across script, visual assets, storyboard prompts and review.",
+    "target_users": [
+      "Chinese-speaking AI short-drama creators acting as investors or clients"
+    ],
+    "inputs": [
+      "idea or script",
+      "platform and production constraints",
+      "locked decisions and rights context"
+    ],
+    "outputs": [
+      "approved story",
+      "asset system",
+      "storyboard and generation package",
+      "review report"
+    ],
+    "exclusions": [
+      "literary-author mode",
+      "live-action production",
+      "direct platform control",
+      "unauthorized likeness or IP",
+      "guaranteed results"
+    ],
+    "qiaomu_defaults": {}
+  },
+  "triggers": {
+    "should_trigger": [
+      "把我当投资人，统筹一部3分钟抖音AI短剧，从三个故事方案一直做到分镜提示词和试拍验收。",
+      "剧本已定，请拆角色、场景、道具资产并安排视觉母版和逐镜生产顺序。"
+    ],
+    "should_not_trigger": [
+      "我要拍真人口播，请安排现场机位、收音和B-roll。",
+      "帮我写一篇不考虑影像生产的文学短篇。",
+      "保证我发到抖音一定爆火。"
+    ],
+    "near_neighbor": [
+      "只诊断这份AI短剧剧本的逻辑和事件密度，不做视觉资产。"
+    ]
+  },
+  "workflow": {
+    "router_rules": [],
+    "compact_workflow": [],
+    "gate_ladder": [],
+    "output_contract": []
+  },
+  "resources": {
+    "references": [
+      "references\\migration-map.md",
+      "references\\orchestration.md"
+    ],
+    "scripts": [],
+    "evals": [
+      "evals\\family-regression.md",
+      "evals\\trigger_cases.json"
+    ],
+    "reports": [
+      "reports\\creation-handoff.md",
+      "reports\\prior-art-research.md"
+    ]
+  },
+  "portability": {
+    "canonical_format": "Agent Skills SKILL.md",
+    "adapter_targets": [
+      "openai",
+      "claude",
+      "generic",
+      "agent-skills-compatible"
+    ],
+    "activation": {
+      "language": "zh-CN",
+      "mechanism": "frontmatter description"
+    },
+    "execution": {
+      "requires_network": false,
+      "requires_external_tools": false
+    },
+    "trust": {},
+    "permissions": {
+      "filesystem": "read-only for project inputs unless user authorizes outputs",
+      "network": "none required"
+    },
+    "degradation": {}
+  },
+  "gates": {
+    "trigger_eval": "required",
+    "output_review": "required",
+    "publication": "not-requested"
+  },
+  "evidence_boundary": {
+    "generated_reports_are_evidence": true,
+    "planned_work_is_evidence": false,
+    "missing_external_or_human_evidence_label": "missing evidence",
+    "public_claim_policy": "claim only what local validation, install proof, human review, or provider-backed evidence actually supports"
+  }
+}
