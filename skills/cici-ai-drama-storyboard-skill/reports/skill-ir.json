@@ -1,0 +1,96 @@
+{
+  "schema_version": "2.0.0-qiaomu-lite",
+  "generated_at": "2026-09-11",
+  "package": {
+    "name": "cici-ai-drama-storyboard-skill",
+    "version": "2.0.0",
+    "owner": "Cici",
+    "maturity_tier": "production",
+    "lifecycle_stage": null,
+    "upstream_inspiration": null,
+    "upstream_sync": {}
+  },
+  "intent": {
+    "description": "将锁定的抖音 AI 短剧剧本和角色/场景/道具/风格母版编译为完整逐镜分镜、分镜图计划、平台可改写的三层 AI 生成提示词、连续性台账、声音与剪辑节奏。 当用户要求逐镜表、镜头时长、首尾帧、图像或视频提示词、角色场景连续性、BGM/音效/字幕/转场或剪辑计划时使用。 不用于重新发明剧本和资产设定、直接操作生成平台、保证模型结果，或在资产未锁定时盲目批量提示词。",
+    "job_to_be_done": "Compile locked Douyin AI drama assets and script into shots, prompts, continuity, sound and edit plans.",
+    "target_users": [
+      "Qiaomu operator"
+    ],
+    "inputs": [
+      "locked script and asset IDs"
+    ],
+    "outputs": [
+      "time-accurate shot table, prompt package, continuity and sound plan"
+    ],
+    "exclusions": [
+      "rewriting locked story",
+      "inventing unlocked assets",
+      "direct platform operation"
+    ],
+    "qiaomu_defaults": {}
+  },
+  "triggers": {
+    "should_trigger": [
+      "剧本和资产都锁定了，输出完整竖屏逐镜表和逐镜AI视频提示词。",
+      "检查分镜里的角色朝向、道具手别、声音桥和剪辑节奏。"
+    ],
+    "should_not_trigger": [
+      "故事还没选，先给我三个校园短剧方案。",
+      "先设计女主角色母版和多角度测试图。"
+    ],
+    "near_neighbor": [
+      "直接替我登录生成平台批量生成并发布。"
+    ]
+  },
+  "workflow": {
+    "router_rules": [],
+    "compact_workflow": [],
+    "gate_ladder": [],
+    "output_contract": []
+  },
+  "resources": {
+    "references": [
+      "references\\shot-compiler.md"
+    ],
+    "scripts": [],
+    "evals": [
+      "evals\\trigger_cases.json"
+    ],
+    "reports": [
+      "reports\\creation-handoff.md",
+      "reports\\prior-art-research.md",
+      "reports\\trigger-eval.json"
+    ]
+  },
+  "portability": {
+    "canonical_format": "Agent Skills SKILL.md",
+    "adapter_targets": [
+      "openai",
+      "claude",
+      "generic",
+      "agent-skills-compatible"
+    ],
+    "activation": {
+      "language": "zh-CN",
+      "mechanism": "frontmatter description"
+    },
+    "execution": {
+      "requires_network": false,
+      "requires_external_tools": false
+    },
+    "trust": {},
+    "permissions": {},
+    "degradation": {}
+  },
+  "gates": {
+    "trigger_eval": "required",
+    "output_review": "required",
+    "publication": "not-requested"
+  },
+  "evidence_boundary": {
+    "generated_reports_are_evidence": true,
+    "planned_work_is_evidence": false,
+    "missing_external_or_human_evidence_label": "missing evidence",
+    "public_claim_policy": "claim only what local validation, install proof, human review, or provider-backed evidence actually supports"
+  }
+}

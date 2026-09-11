@@ -1,0 +1,10 @@
+interface:
+  display_name: "Cici AI 短剧剧本"
+  short_description: "负责抖音 AI 短剧选案、钩子、节拍、剧本及逻辑密度。"
+  default_prompt: "请先按抖音 AI 短剧标准给三个差异明确的故事方案，获批后再写节拍与分场剧本。"
+compatibility:
+  canonical_format: "Agent Skills SKILL.md"
+  adapter_targets: [openai, claude, generic, agent-skills-compatible]
+  activation: {language: "zh-CN", mechanism: "frontmatter description"}
+  execution: {requires_network: false, requires_external_tools: false}
+gates: {trigger_eval: required, output_review: required, publication: not-requested}

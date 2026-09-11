@@ -1,0 +1,97 @@
+{
+  "schema_version": "2.0.0-qiaomu-lite",
+  "generated_at": "2026-09-11",
+  "package": {
+    "name": "cici-ai-drama-script-skill",
+    "version": "2.0.0",
+    "owner": "Cici",
+    "maturity_tier": "production",
+    "lifecycle_stage": null,
+    "upstream_inspiration": null,
+    "upstream_sync": {}
+  },
+  "intent": {
+    "description": "为抖音 AI 短剧完成选题绿灯、前三秒钩子、三案选择、人物 Want/Need、情绪波形、节拍表、分场剧本、对白、血肉质检、逻辑可信度与事件密度诊断。 当用户只需创作或修改 AI 短剧剧本、设计反转和情绪曲线、检查因果信息来源、补足时长信息点或做剧本医生时使用。 不用于纯文学、舞台剧、真人拍摄执行、视觉资产母版、逐镜生成提示词，或保证抖音流量。",
+    "job_to_be_done": "Create and diagnose Douyin AI short-drama stories and scripts.",
+    "target_users": [
+      "Qiaomu operator"
+    ],
+    "inputs": [
+      "idea, brief or draft script"
+    ],
+    "outputs": [
+      "three proposals, beat sheet, screenplay, logic and density checks"
+    ],
+    "exclusions": [
+      "literary mode",
+      "visual asset design",
+      "storyboard prompts",
+      "guaranteed traffic"
+    ],
+    "qiaomu_defaults": {}
+  },
+  "triggers": {
+    "should_trigger": [
+      "给我三个抖音AI悬疑短剧方案，第一秒有钩子，选完再写200秒节拍和分场剧本。",
+      "检查这份AI短剧为什么逻辑出戏、信息点太少，并给最小修改方案。"
+    ],
+    "should_not_trigger": [
+      "只为已定剧本设计视觉风格DNA和色彩光线。",
+      "安排真人演员的现场机位和收音。"
+    ],
+    "near_neighbor": [
+      "写一篇纯文学校园短篇，不考虑短视频和AI生成。"
+    ]
+  },
+  "workflow": {
+    "router_rules": [],
+    "compact_workflow": [],
+    "gate_ladder": [],
+    "output_contract": []
+  },
+  "resources": {
+    "references": [
+      "references\\douyin-script-system.md"
+    ],
+    "scripts": [],
+    "evals": [
+      "evals\\output-case.md",
+      "evals\\trigger_cases.json"
+    ],
+    "reports": [
+      "reports\\creation-handoff.md",
+      "reports\\prior-art-research.md"
+    ]
+  },
+  "portability": {
+    "canonical_format": "Agent Skills SKILL.md",
+    "adapter_targets": [
+      "openai",
+      "claude",
+      "generic",
+      "agent-skills-compatible"
+    ],
+    "activation": {
+      "language": "zh-CN",
+      "mechanism": "frontmatter description"
+    },
+    "execution": {
+      "requires_network": false,
+      "requires_external_tools": false
+    },
+    "trust": {},
+    "permissions": {},
+    "degradation": {}
+  },
+  "gates": {
+    "trigger_eval": "required",
+    "output_review": "required",
+    "publication": "not-requested"
+  },
+  "evidence_boundary": {
+    "generated_reports_are_evidence": true,
+    "planned_work_is_evidence": false,
+    "missing_external_or_human_evidence_label": "missing evidence",
+    "public_claim_policy": "claim only what local validation, install proof, human review, or provider-backed evidence actually supports"
+  }
+}

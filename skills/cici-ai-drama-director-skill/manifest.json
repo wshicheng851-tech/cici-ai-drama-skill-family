@@ -1,0 +1,26 @@
+{
+  "name": "cici-ai-drama-director-skill",
+  "version": "2.0.0",
+  "owner": "Cici",
+  "updated_at": "2026-09-11",
+  "status": "local-validated",
+  "maturity_tier": "production",
+  "lifecycle_stage": "major-upgrade",
+  "intent": {
+    "job_to_be_done": "Orchestrate a Douyin-priority AI short-drama project across script, visual assets, storyboard prompts and review.",
+    "target_users": ["Chinese-speaking AI short-drama creators acting as investors or clients"],
+    "inputs": ["idea or script", "platform and production constraints", "locked decisions and rights context"],
+    "outputs": ["approved story", "asset system", "storyboard and generation package", "review report"],
+    "exclusions": ["literary-author mode", "live-action production", "direct platform control", "unauthorized likeness or IP", "guaranteed results"]
+  },
+  "family_members": [
+    "cici-ai-drama-script-skill",
+    "cici-ai-drama-style-skill",
+    "cici-ai-drama-character-skill",
+    "cici-ai-drama-scene-skill",
+    "cici-ai-drama-prop-skill",
+    "cici-ai-drama-storyboard-skill",
+    "cici-ai-drama-review-skill"
+  ],
+  "release_gates": {"local_validation":"required","trigger_eval":"required","output_review":"required","publication":"not requested"}
+}

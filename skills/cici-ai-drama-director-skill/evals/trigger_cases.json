@@ -1,0 +1,23 @@
+{
+  "positive_concepts": {
+    "ai_drama": ["AI 短剧", "AI 短片", "AI 剧情视频", "生成短剧"],
+    "orchestration": ["完整流程", "从想法到成片", "统筹", "资产台账", "总导演"],
+    "investor": ["投资人", "甲方", "审批", "立项"],
+    "boundaries": ["不用于", "不承诺", "不直接"]
+  },
+  "description_required_concepts": ["ai_drama", "orchestration", "investor", "boundaries"],
+  "recommended_threshold": 0.5,
+  "negative_patterns": ["真人口播", "舞台剧", "保证爆火"],
+  "should_trigger": [
+    {"family":"full-project","text":"把我当投资人，统筹一部3分钟抖音AI短剧，从三个故事方案一直做到分镜提示词和试拍验收。"},
+    {"family":"asset-orchestration","text":"这部 AI 短剧剧本已定，请统筹角色、场景、道具资产，并安排视觉母版和逐镜生产顺序。"}
+  ],
+  "should_not_trigger": [
+    {"family":"live-action","text":"我要拍真人口播，请安排现场机位、收音和B-roll。"},
+    {"family":"literary","text":"帮我写一篇不考虑影像生产的文学短篇。"},
+    {"family":"guarantee","text":"保证我发到抖音一定爆火。"}
+  ],
+  "near_neighbor": [
+    {"family":"single-script-branch","text":"只诊断这份AI短剧剧本的逻辑和事件密度，不做视觉资产。"}
+  ]
+}

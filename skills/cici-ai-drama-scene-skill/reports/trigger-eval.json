@@ -1,0 +1,83 @@
+{
+  "ok": true,
+  "threshold": 0.5,
+  "description_concepts": [
+    "ai",
+    "boundaries",
+    "scene",
+    "task"
+  ],
+  "missing_description_concepts": [],
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "false_positive": 0,
+    "false_negative": 0,
+    "pass_rate": 1.0
+  },
+  "failures": [],
+  "results": {
+    "should_trigger": [
+      {
+        "prompt": "为便利店 AI 短剧建立场景母版、出入口动线和时段变体。",
+        "family": "master",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.5,
+        "matched_concepts": [
+          "ai",
+          "scene"
+        ],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "这部 AI 短剧出现空间漂移，请校正场景母版和反打方向。",
+        "family": "continuity",
+        "expected_trigger": true,
+        "predicted_trigger": true,
+        "passed": true,
+        "score": 0.5,
+        "matched_concepts": [
+          "ai",
+          "scene"
+        ],
+        "negative_pattern": null
+      }
+    ],
+    "should_not_trigger": [
+      {
+        "prompt": "设计女主的脸型发型和服装母版。",
+        "family": "character",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": null
+      },
+      {
+        "prompt": "检查故事反转的因果。",
+        "family": "script",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": null
+      }
+    ],
+    "near_neighbor": [
+      {
+        "prompt": "把已锁场景做成逐镜提示词和剪辑计划。",
+        "family": "storyboard",
+        "expected_trigger": false,
+        "predicted_trigger": false,
+        "passed": true,
+        "score": 0.0,
+        "matched_concepts": [],
+        "negative_pattern": null
+      }
+    ]
+  }
+}
